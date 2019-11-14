@@ -1,0 +1,44 @@
+{
+  "name": "@completely/cli",
+  "description": "Generate shell completion scripts from a JSON description of your command",
+  "version": "0.0.1",
+  "author": "Franco Victorio",
+  "bin": {
+    "completely": "./bin/run"
+  },
+  "bugs": "https://github.com/fvictorio/completely/issues",
+  "dependencies": {
+    "@completely/bash-generator": "^0.0.1",
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "tslib": "^1"
+  },
+  "devDependencies": {
+    "@types/node": "^10",
+    "ts-node": "^8",
+    "typescript": "^3.3"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib"
+  ],
+  "homepage": "https://github.com/fvictorio/completely",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "bin": "completely"
+  },
+  "repository": "fvictorio/completely",
+  "scripts": {
+    "prepack": "rm -rf lib && tsc -b",
+    "test": "echo NO TESTS"
+  },
+  "types": "lib/index.d.ts"
+}
