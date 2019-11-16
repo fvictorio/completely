@@ -1,6 +1,7 @@
 import * as fs from 'fs'
 import * as path from 'path'
 import Handlebars from 'handlebars';
+import { Schema } from '@completely/spec'
 
 Handlebars.registerHelper('commandsExist', (commands: string[]) => {
   if (!commands || !commands.length) {
@@ -19,7 +20,7 @@ const template = fs.readFileSync(path.join(__dirname, 'template.sh')).toString()
 const compiled = Handlebars.compile(template);
 
 
-export const generate = (completionSpec: any): string => {
+export const generate = (completionSpec: Schema): string => {
   const commandName = completionSpec.command;
   const subcommandsList = (completionSpec.subcommands || [])
     .map((subcommand: any) => subcommand.name)

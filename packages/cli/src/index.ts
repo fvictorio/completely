@@ -1,6 +1,8 @@
+import ajv from 'ajv'
 import * as fs from 'fs'
 import { generate } from '@completely/bash-generator'
 import {Command, flags} from '@oclif/command'
+import { validate } from '@completely/spec'
 
 class Completely extends Command {
   static description = 'Generate a shell completion script from a JSON description of your command'
@@ -20,7 +22,18 @@ class Completely extends Command {
   async run() {
     const {args, flags} = this.parse(Completely)
 
-    const completionSpec = JSON.parse(fs.readFileSync(args.file).toString())
+    let completionSpec
+    try {
+      completionSpec = JSON.parse(fs.readFileSync(args.file).toString())
+    } catch (e) {
+      this.error('The specified file is not a valid JSON')
+    }
+
+    const valid = validate(completionSpec)
+    if (!valid) {
+      console.error(ajv.errorsText(validate.errors))
+      this.error('Invalid specification file')
+    }
 
     const script = generate(completionSpec)
 

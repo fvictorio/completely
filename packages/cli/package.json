@@ -9,9 +9,11 @@
   "bugs": "https://github.com/fvictorio/completely/issues",
   "dependencies": {
     "@completely/bash-generator": "^0.0.3",
+    "@completely/spec": "^0.0.1",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
+    "ajv": "^6.10.2",
     "tslib": "^1"
   },
   "devDependencies": {
