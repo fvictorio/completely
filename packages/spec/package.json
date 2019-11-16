@@ -1,6 +1,6 @@
 {
   "name": "@completely/spec",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Spec of JSON descriptions of commands used by completely to generate shell completion scripts",
   "main": "dist/index.js",
   "author": "Franco Victorio",
