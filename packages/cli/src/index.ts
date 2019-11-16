@@ -20,7 +20,12 @@ class Completely extends Command {
   async run() {
     const {args, flags} = this.parse(Completely)
 
-    const completionSpec = JSON.parse(fs.readFileSync(args.file).toString())
+    let completionSpec
+    try {
+      completionSpec = JSON.parse(fs.readFileSync(args.file).toString())
+    } catch (e) {
+      this.error('The specified file is not a valid JSON')
+    }
 
     const script = generate(completionSpec)
 

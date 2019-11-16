@@ -10,6 +10,7 @@
     "postbuild": "cp src/template.sh dist"
   },
   "dependencies": {
+    "@completely/spec": "^0.0.1",
     "handlebars": "^4.5.2"
   },
   "devDependencies": {

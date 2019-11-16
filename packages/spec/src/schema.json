@@ -1,0 +1,11 @@
+{
+  "type": "object",
+  "properties": {
+    "command": { "type": "string" },
+    "args": { "type": "array" },
+    "flags": { "type": "array" },
+    "subcommands": { "type": "array" }
+  },
+  "required": ["command"],
+  "additionalProperties": false
+}
