@@ -1,15 +1,15 @@
 {
   "name": "@completely/cli",
   "description": "Generate shell completion scripts from a JSON description of your command",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Franco Victorio",
   "bin": {
     "completely": "./bin/run"
   },
   "bugs": "https://github.com/fvictorio/completely/issues",
   "dependencies": {
-    "@completely/bash-generator": "^0.0.3",
-    "@completely/spec": "^0.0.1",
+    "@completely/bash-generator": "^0.0.4",
+    "@completely/spec": "^0.0.2",
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
