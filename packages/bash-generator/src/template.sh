@@ -1,4 +1,4 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 
 # helper method
 declare -f _contains_element > /dev/null || _contains_element() {
@@ -83,9 +83,9 @@ _{{commandName}}_completions()
 
     {{#each stringFlags}}
     {{#if shortName}}
-    if [ $prev == "--{{longName}}" ] || [ $prev == "-{{shortName}}" ]; then
+    if [ "$prev" == "--{{longName}}" ] || [ "$prev" == "-{{shortName}}" ]; then
     {{else}}
-    if [[ $prev == "--{{longName}}" ]]; then
+    if [[ "$prev" == "--{{longName}}" ]]; then
     {{/if}}
       COMPREPLY=()
       {{#if completion.files}}
