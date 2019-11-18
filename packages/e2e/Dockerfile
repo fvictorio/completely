@@ -15,6 +15,8 @@ RUN cd packages/spec && yarn build
 RUN cd packages/bash-generator && yarn build
 RUN cd packages/cli && yarn prepack
 
+RUN ./node_modules/.bin/lerna add @completely/cli --scope=@completely/e2e
+
 WORKDIR /completely/packages/e2e
 
 CMD ["bash", "--init-file", "run-tests.sh", "-i", "-c", "exit"]
