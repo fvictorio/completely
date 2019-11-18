@@ -4,7 +4,7 @@ import { Schema } from './interface'
 
 import schema from './schema.json'
 
-const ajv = new Ajv();
+const ajv = new Ajv({ jsonPointers: true });
 export const validate = ajv.compile(schema);
 
-export { Schema }
+export { ajv, schema, Schema }
