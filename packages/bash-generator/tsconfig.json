@@ -8,7 +8,8 @@
     "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist",
-    "sourceMap": true
+    "sourceMap": true,
+    "resolveJsonModule": true
   },
   "lib": ["es2015"]
 }

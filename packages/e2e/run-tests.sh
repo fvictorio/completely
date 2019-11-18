@@ -37,7 +37,7 @@ run_test() {
 }
 
 # generate completion script
-../cli/bin/run singleArgOneOf.json > singleArgOneOf.sh
+./node_modules/.bin/completely singleArgOneOf.json > singleArgOneOf.sh
 
 # run tests
 run_test singleArgOneOf 1 "singleArgOneOf " 1 "foo bar baz qux"
