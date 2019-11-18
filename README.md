@@ -8,12 +8,42 @@ You can use the CLI to generate scripts:
 
 ```
 npm i -g @completely/cli
-completely --shell bash completion.json
+completely --shell bash completion.json > completion.sh
 ```
 
 (Only bash is supported at the moment.)
 
-Or you can use the library:
+For example, given this JSON description:
+
+```json
+{
+  "command": "my-command",
+  "subcommands": [
+    {
+      "command": "draw",
+      "args": [],
+      "flags": [{
+        "type": "string",
+        "name": "color",
+        "completion": {
+          "type": "oneOf",
+          "values": ["red", "green", "blue"]
+        }
+      }]
+    }
+  ]
+}
+```
+
+If you generate a `completion.sh` file and source it, you'll get some completion suggestions:
+
+```bash
+source completion.sh
+my-command # pressing <tab> will complete "draw"
+my-command draw --color # pressing <tab><tab> will suggest "red", "green" and "blue"
+```
+
+You can also use the library directly:
 
 ```
 npm i @completely/bash-generator
