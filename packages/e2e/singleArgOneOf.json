@@ -1,0 +1,12 @@
+{
+  "command": "singleArgOneOf",
+  "args": [
+    {
+      "name": "arg",
+      "completion": {
+        "type": "oneOf",
+        "values": ["foo", "bar", "baz", "qux"]
+      }
+    }
+  ]
+}

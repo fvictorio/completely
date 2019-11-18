@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - "10"
+
+services:
+  - docker
+
+script:
+  - docker build -t completely-e2e -f packages/e2e/Dockerfile .
+  - docker run completely-e2e
