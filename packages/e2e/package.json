@@ -2,5 +2,8 @@
   "name": "@completely/e2e",
   "author": "Franco Victorio",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@completely/cli": "^0.0.5"
+  }
 }

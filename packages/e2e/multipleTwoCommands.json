@@ -1,0 +1,15 @@
+{
+  "command": "multipleTwoCommands",
+  "subcommands": [
+    {
+      "command": "foo",
+      "args": [],
+      "flags": []
+    },
+    {
+      "command": "bar",
+      "args": [],
+      "flags": []
+    }
+  ]
+}

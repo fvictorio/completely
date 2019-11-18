@@ -22,27 +22,20 @@ const compiled = Handlebars.compile(template);
 
 export const generate = (completionSpec: Schema): string => {
   const commandName = completionSpec.command;
-  const subcommandsList = (completionSpec.subcommands || [])
-    .map((subcommand: any) => subcommand.name)
+  const subcommandsList = completionSpec.subcommands
+    .filter(subcommand => subcommand.command !== "")
+    .map(subcommand => subcommand.command)
     .join(' ');
 
-  const rootCommand = {
-    ...completionSpec,
-    name: "",
-    subcommands: null
-  }
+  const subcommands = completionSpec.subcommands.map(subcommand => {
+    const name = subcommand.command;
 
-  const allCommands = completionSpec.subcommands ? (completionSpec.subcommands || []) : [rootCommand]
-
-  const subcommands = allCommands.map((subcommand: any) => {
-    const name = subcommand.name;
-
-    const booleanFlags = (subcommand.flags || [])
-      .filter((flag: any) => flag.type === 'boolean')
-      .map((flag: any) => ({ longName: flag.name, shortName: flag.char }));
+    const booleanFlags = subcommand.flags
+      .filter(flag => flag.type === 'boolean')
+      .map(flag => ({ longName: flag.name, shortName: flag.char }));
     const stringFlags = (subcommand.flags || [])
-      .filter((flag: any) => flag.type === 'string')
-      .map((flag: any) => {
+      .filter(flag => flag.type === 'string')
+      .map(flag => {
         const result: any = { longName: flag.name, shortName: flag.char };
         result.completion = {};
         switch (flag.completion.type) {
@@ -64,7 +57,7 @@ export const generate = (completionSpec: Schema): string => {
         return result;
       });
 
-    const args = (subcommand.args || []).map((arg: any) => {
+    const args = subcommand.args.map(arg => {
       const result: any = { completion: {} };
       switch (arg.completion.type) {
         case 'files':

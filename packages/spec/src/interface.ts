@@ -7,7 +7,20 @@
 
 export interface Schema {
   command: string;
-  args?: any[];
-  flags?: any[];
-  subcommands?: any[];
+  subcommands: {
+    command: string;
+    args: {
+      name?: string;
+      completion: Completion;
+    }[];
+    flags: {
+      type: "boolean" | "string";
+      completion: Completion;
+      [k: string]: any;
+    }[];
+  }[];
+}
+export interface Completion {
+  type: string;
+  [k: string]: any;
 }

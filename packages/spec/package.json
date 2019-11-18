@@ -6,6 +6,7 @@
   "author": "Franco Victorio",
   "license": "MIT",
   "scripts": {
+    "prebuild": "json2ts -i src/schema.json -o src/interface.ts",
     "build": "tsc"
   },
   "dependencies": {
