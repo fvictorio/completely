@@ -9,10 +9,11 @@ RUN npm install
 COPY . .
 
 RUN ./node_modules/.bin/lerna bootstrap
+RUN ./node_modules/.bin/lerna link
 
-WORKDIR /completely/packages/cli
-
-RUN yarn pack -f completely-cli.tgz
+RUN cd packages/spec && yarn build
+RUN cd packages/bash-generator && yarn build
+RUN cd packages/cli && yarn pack -f completely-cli.tgz
 
 WORKDIR /completely/packages/e2e
 
