@@ -13,10 +13,8 @@ RUN ./node_modules/.bin/lerna link
 
 RUN cd packages/spec && yarn build
 RUN cd packages/bash-generator && yarn build
-RUN cd packages/cli && yarn pack -f completely-cli.tgz
+RUN cd packages/cli && yarn prepack
 
 WORKDIR /completely/packages/e2e
-
-RUN yarn add ../cli/completely-cli.tgz
 
 CMD ["bash", "--init-file", "run-tests.sh", "-i", "-c", "exit"]
