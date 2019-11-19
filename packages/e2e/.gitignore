@@ -1,1 +1,3 @@
 *.sh
+*.zsh
+zsh_completions/

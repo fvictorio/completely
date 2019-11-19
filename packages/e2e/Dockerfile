@@ -1,6 +1,6 @@
 FROM node:10
 
-RUN apt-get update && apt-get install bash-completion
+RUN apt-get update && apt-get install -y bash-completion zsh
 
 WORKDIR /completely
 
@@ -19,4 +19,4 @@ RUN ./node_modules/.bin/lerna add @completely/cli --scope=@completely/e2e
 
 WORKDIR /completely/packages/e2e
 
-CMD ["bash", "--init-file", "run-tests.sh", "-i", "-c", "exit"]
+CMD ["./run-all-tests.sh"]

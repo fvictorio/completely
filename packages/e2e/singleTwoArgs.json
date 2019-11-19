@@ -1,0 +1,21 @@
+{
+  "command": "singleTwoArgs",
+  "subcommands": [
+    {
+      "command": "",
+      "args": [{
+        "name": "arg1",
+        "completion": {
+          "type": "oneOf",
+          "values": ["foo", "bar", "baz", "qux"]
+        }
+      }, {
+        "name": "arg2",
+        "completion": {
+          "type": "files"
+        }
+      }],
+      "flags": []
+    }
+  ]
+}

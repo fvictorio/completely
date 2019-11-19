@@ -1,6 +1,7 @@
 import betterAjvErrors from 'better-ajv-errors'
 import * as fs from 'fs'
-import { generate } from '@completely/bash-generator'
+import { generate as generateBash } from '@completely/bash-generator'
+import { generate as generateZsh } from '@completely/zsh-generator'
 import { Command, flags } from '@oclif/command'
 import { schema, validate } from '@completely/spec'
 
@@ -12,7 +13,7 @@ class Completely extends Command {
     help: flags.help({ char: 'h' }),
     shell: flags.string({
       description: 'Choose a shell for generating the completion file',
-      options: ['bash'],
+      options: ['bash', 'zsh'],
       default: 'bash'
     })
   }
@@ -20,7 +21,9 @@ class Completely extends Command {
   static args = [{ name: 'file' }]
 
   async run() {
-    const { args } = this.parse(Completely)
+    const { args, flags } = this.parse(Completely)
+
+    const { shell } = flags
 
     let completionSpec
     try {
@@ -35,7 +38,14 @@ class Completely extends Command {
       this.error(output as any)
     }
 
-    const script = generate(completionSpec)
+    let script: string
+    if (shell === 'bash') {
+      script = generateBash(completionSpec)
+    } else if (shell === 'zsh') {
+      script = generateZsh(completionSpec)
+    } else {
+      this.error(`Unsupported shell: '${shell}'`)
+    }
 
     this.log(script)
   }

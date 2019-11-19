@@ -13,7 +13,7 @@ npm i -g @completely/cli
 completely --shell bash completion.json > completion.sh
 ```
 
-(Only bash is supported at the moment.)
+(Only bash and zsh are supported at the moment.)
 
 For example, given this JSON description:
 

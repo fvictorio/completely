@@ -1,0 +1,25 @@
+{
+  "command": "subcommandsWithColon",
+  "subcommands": [
+    {
+      "command": "foo:bar",
+      "args": [],
+      "flags": []
+    },
+    {
+      "command": "bar:baz",
+      "args": [],
+      "flags": []
+    },
+    {
+      "command": "qux",
+      "args": [],
+      "flags": []
+    },
+    {
+      "command": "quux",
+      "args": [],
+      "flags": []
+    }
+  ]
+}

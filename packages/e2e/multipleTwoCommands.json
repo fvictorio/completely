@@ -4,7 +4,13 @@
     {
       "command": "foo",
       "args": [],
-      "flags": []
+      "flags": [{
+        "name": "flag",
+        "type": "string",
+        "completion": {
+          "type": "any"
+        }
+      }]
     },
     {
       "command": "bar",
