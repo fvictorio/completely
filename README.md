@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.com/fvictorio/completely.svg?branch=master)](https://travis-ci.com/fvictorio/completely)
-
 # completely
 
 Generate shell completion scripts from a JSON description of a command.
