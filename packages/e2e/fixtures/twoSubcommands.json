@@ -1,5 +1,5 @@
 {
-  "command": "multipleTwoCommands",
+  "command": "twoSubcommands",
   "subcommands": [
     {
       "command": "foo",
@@ -8,7 +8,7 @@
         "name": "flag",
         "type": "string",
         "completion": {
-          "type": "any"
+          "type": "directories"
         }
       }]
     },

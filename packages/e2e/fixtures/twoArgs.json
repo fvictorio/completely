@@ -1,5 +1,5 @@
 {
-  "command": "singleTwoArgs",
+  "command": "twoArgs",
   "subcommands": [
     {
       "command": "",

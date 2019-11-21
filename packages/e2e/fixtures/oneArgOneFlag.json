@@ -1,5 +1,5 @@
 {
-  "command": "singleArgOneOf",
+  "command": "oneArgOneFlag",
   "subcommands": [
     {
       "command": "",
@@ -10,7 +10,11 @@
           "values": ["foo", "bar", "baz", "qux"]
         }
       }],
-      "flags": []
+      "flags": [{
+        "type": "boolean",
+        "name": "myflag",
+        "completion": { "type": "any" }
+      }]
     }
   ]
 }

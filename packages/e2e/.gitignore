@@ -1,3 +1,2 @@
 zsh_completions/
-*.sh
-!run-all-tests.sh
+bash_completions/
