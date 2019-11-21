@@ -1,6 +1,6 @@
 {
   "name": "@completely/zsh-generator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generate a zsh completion script from a JSON description of your command",
   "main": "dist/index.js",
   "repository": "https://github.com/fvictorio/completely",
@@ -15,7 +15,7 @@
     "typescript": "^3.7.2"
   },
   "dependencies": {
-    "@completely/spec": "^0.0.4",
+    "@completely/spec": "^0.0.5",
     "handlebars": "^4.5.3"
   }
 }
