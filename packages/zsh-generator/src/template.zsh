@@ -3,8 +3,8 @@
 function _{{commandName}} {
   local _line
 
+  _arguments -C \
   {{#if rootCommand}}
-    _arguments -C \
     {{#each rootCommand.args}}
       {{#if completion.oneOf}}
         "{{#add @index 1}}{{/add}}: :({{completion.oneOf}})" \
@@ -14,12 +14,18 @@ function _{{commandName}} {
         "{{#add @index 1}}{{/add}}: :()" \
       {{/if}}
     {{/each}}
-    "*::arg:->args"
+    {{#each rootCommand.stringFlags}}
+      {{#if completion.directories}}
+      "--{{longName}}[]: :_files -/" \
+      {{/if}}
+    {{/each}}
+    {{#each rootCommand.booleanFlags}}
+      "--{{longName}}" \
+    {{/each}}
   {{else}}
-    _arguments -C \
     "1: :({{subcommandsList}})" \
-    "*::arg:->args"
   {{/if}}
+  "*::arg:->args"
 
   {{#if subcommands.length}}
     case $line[1] in
@@ -34,16 +40,22 @@ function _{{commandName}} {
 
 {{#each subcommands}}
 function __{{../commandName}}_{{name}} {
-  {{#if stringFlags.length}}
+  {{#if hasFlags}}
   _arguments \
     {{#each stringFlags}}
-      {{#if @last}}
-      "--{{longName}}"
+      {{#if completion.directories}}
+      "--{{longName}}: :_dirs" \
+      {{else if completion.oneOf}}
+      "--{{longName}}: :({{completion.oneOf}})" \
       {{else}}
-      "--{{longName}}" \
+      "--{{longName}}: :_files" \
       {{/if}}
     {{/each}}
+    {{#each booleanFlags}}
+      "--{{longName}}" \
+    {{/each}}
   {{/if}}
+
 }
 {{/each}}
 

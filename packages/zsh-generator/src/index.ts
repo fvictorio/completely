@@ -71,7 +71,9 @@ export const generate = (completionSpec: Schema): string => {
       return result;
     });
 
-    return { name, booleanFlags, stringFlags, args };
+    const hasFlags = booleanFlags.length > 0 || stringFlags.length > 0
+
+    return { name, booleanFlags, stringFlags, args, hasFlags };
   });
 
   const rootCommandIndex = subcommands.findIndex(subcommand => subcommand.name === '')

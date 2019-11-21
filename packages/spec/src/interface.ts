@@ -13,11 +13,20 @@ export interface Schema {
       name?: string;
       completion: Completion;
     }[];
-    flags: {
-      type: "boolean" | "string";
-      completion: Completion;
-      [k: string]: any;
-    }[];
+    flags: (
+      | {
+          type: {
+            [k: string]: any;
+          };
+          [k: string]: any;
+        }
+      | {
+          type: {
+            [k: string]: any;
+          };
+          [k: string]: any;
+        }
+    )[];
   }[];
 }
 export interface Completion {

@@ -38,7 +38,7 @@ class Completely extends Command {
       this.error(output as any)
     }
 
-    let script: string
+    let script: string = ''
     if (shell === 'bash') {
       script = generateBash(completionSpec)
     } else if (shell === 'zsh') {

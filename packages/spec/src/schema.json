@@ -35,13 +35,23 @@
             "items": {
               "type": "object",
               "properties": {
+                "name": { "type": "string" },
                 "type": {
                   "type": "string",
                   "enum": ["boolean", "string"]
                 },
                 "completion": { "$ref": "#/definitions/completion" }
               },
-              "required": ["type", "completion"]
+              "anyOf": [
+                {
+                  "properties": { "type": { "const": "string" } },
+                  "required": ["name", "type", "completion"]
+                },
+                {
+                  "properties": { "type": { "const": "boolean" } },
+                  "required": ["name", "type"]
+                }
+              ]
             }
           }
         },
