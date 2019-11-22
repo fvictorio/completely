@@ -14,13 +14,8 @@ function _{{commandName}} {
         "{{#add @index 1}}{{/add}}: :()" \
       {{/if}}
     {{/each}}
-    {{#each rootCommand.stringFlags}}
-      {{#if completion.directories}}
-      "--{{longName}}[]: :_files -/" \
-      {{/if}}
-    {{/each}}
-    {{#each rootCommand.booleanFlags}}
-      "--{{longName}}" \
+    {{#each rootCommand.allFlags}}
+      {{#stringFlag this}}{{/stringFlag}} \
     {{/each}}
   {{else}}
     "1: :({{subcommandsList}})" \
@@ -42,17 +37,8 @@ function _{{commandName}} {
 function __{{../commandName}}_{{name}} {
   {{#if hasFlags}}
   _arguments \
-    {{#each stringFlags}}
-      {{#if completion.directories}}
-      "--{{longName}}: :_dirs" \
-      {{else if completion.oneOf}}
-      "--{{longName}}: :({{completion.oneOf}})" \
-      {{else}}
-      "--{{longName}}: :_files" \
-      {{/if}}
-    {{/each}}
-    {{#each booleanFlags}}
-      "--{{longName}}" \
+    {{#each allFlags}}
+      {{#stringFlag this}}{{/stringFlag}} \
     {{/each}}
   {{/if}}
 

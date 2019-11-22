@@ -40,18 +40,15 @@
                   "type": "string",
                   "enum": ["boolean", "string"]
                 },
-                "completion": { "$ref": "#/definitions/completion" }
-              },
-              "anyOf": [
-                {
-                  "properties": { "type": { "const": "string" } },
-                  "required": ["name", "type", "completion"]
-                },
-                {
-                  "properties": { "type": { "const": "boolean" } },
-                  "required": ["name", "type"]
+                "completion": { "$ref": "#/definitions/completion" },
+                "exclusive": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 }
-              ]
+              },
+              "required": ["name", "type"]
             }
           }
         },

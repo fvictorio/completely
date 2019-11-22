@@ -27,12 +27,12 @@ _{{commandName}}_completions()
 
   # register completions for each subcommand
   {{#each subcommands}}
-  {{#if name}}
-  if [ "${subcommand}" == "{{name}}" ]; then
-    local args_shift=2
-  {{else}}
+  {{#if isRootCommand}}
   if true; then
     local args_shift=1
+  {{else}}
+  if [ "${subcommand}" == "{{name}}" ]; then
+    local args_shift=2
   {{/if}}
     # get the list of already used flags and args, ignoring the current word
     args=("${words[@]:args_shift}") # args without command and subcommand
@@ -107,29 +107,27 @@ _{{commandName}}_completions()
 
       if [[ $cur != --* ]]; then
         true
-        {{#each booleanFlags}}
+        {{#each allFlags}}
           {{#if shortName}}
+          {{! If the flag has multiple: true, then always complete it }}
+          {{#if multiple }}
+          if true; then
+          {{else}}
           if ! _contains_element "-{{shortName}}" "${used_flags[@]}"; then
-            completion+=("-{{shortName}}")
-          fi
           {{/if}}
-        {{/each}}
-        {{#each stringFlags}}
-          {{#if shortName}}
-          if ! _contains_element "-{{shortName}}" "${used_flags[@]}"; then
             completion+=("-{{shortName}}")
           fi
           {{/if}}
         {{/each}}
       fi
 
-      {{#each booleanFlags}}
+      {{#each allFlags}}
+        {{! If the flag has multiple: true, then always complete it }}
+        {{#if multiple }}
+        if true; then
+        {{else}}
         if ! _contains_element "--{{longName}}" "${used_flags[@]}"; then
-          completion+=("--{{longName}}")
-        fi
-      {{/each}}
-      {{#each stringFlags}}
-        if ! _contains_element "--{{longName}}" "${used_flags[@]}"; then
+        {{/if}}
           completion+=("--{{longName}}")
         fi
       {{/each}}
