@@ -97,6 +97,11 @@ _{{commandName}}_completions()
       {{#if completion.oneOf}}
       COMPREPLY=($(compgen -W "{{ completion.oneOf }}" -- "$cur"))
       {{/if}}
+      {{#if completion.command}}
+      if {{#commandsExist completion.requiredCommands}}{{/commandsExist}}; then
+        COMPREPLY=($(compgen -W "$({{{completion.command}}})" -- "$cur"))
+      fi
+      {{/if}}
       return
     fi
     {{/each}}
