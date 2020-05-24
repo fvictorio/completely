@@ -1,6 +1,6 @@
 {
   "name": "@completely/bash-generator",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Generate a bash completion script from a JSON description of your command",
   "main": "dist/index.js",
   "author": "Franco Victorio",
@@ -10,7 +10,7 @@
     "postbuild": "cp src/template.sh dist"
   },
   "dependencies": {
-    "@completely/spec": "^0.0.6",
+    "@completely/spec": "^0.0.7",
     "handlebars": "^4.5.2"
   },
   "devDependencies": {
