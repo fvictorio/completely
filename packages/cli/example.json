@@ -1,0 +1,17 @@
+{
+  "command": "my-command",
+  "subcommands": [
+    {
+      "command": "draw",
+      "args": [],
+      "flags": [{
+        "type": "string",
+        "name": "color",
+        "completion": {
+          "type": "oneOf",
+          "values": ["red", "green", "blue"]
+        }
+      }]
+    }
+  ]
+}
