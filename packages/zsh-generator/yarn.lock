@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@completely/spec@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@completely/spec/-/spec-0.0.4.tgz#738458e6bba8edaeb24b7bc54b5420faece745a2"
-  integrity sha512-+PXUmWkD7djLZkIo1YvZfJtlTux5ZiC3elMspau/BQbl6nDMwzn2Pr7WiBPq9x5I/aqv8S7H4YXulwKPZwhP+Q==
+"@completely/spec@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@completely/spec/-/spec-0.0.7.tgz#5965c93ed8efa535fea8ce9f27fefa5c14c8c631"
+  integrity sha512-cbHB6iUVJESvIaPSchgZy2XlbzdAemZgPtU7SmYv0tB9tEB2MWBzilbcIXYaZLmOUC1zS3GXMyisEl4CJDVmeg==
   dependencies:
     ajv "^6.10.2"
     json-schema-to-typescript "^7.1.0"
@@ -214,9 +214,9 @@ json-stringify-safe@^5.0.1:
   integrity sha1-Epai1Y/UXxmg9s4B1lcB4sc1tus=
 
 lodash@^4.17.11:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 lru-queue@0.1:
   version "0.1.0"
