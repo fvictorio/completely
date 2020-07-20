@@ -25,21 +25,29 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-"@completely/bash-generator@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@completely/bash-generator/-/bash-generator-0.0.5.tgz#6966d770d32e991348d30196b620a49f286f4d96"
-  integrity sha512-pdQDYVILrhlmzbBcQbU5VMCnskFeaj55BHkme9JjHqmsAk0W65DduSZJ7MtnPWN2j9mzpCURQKqEWQX+Rdqj1g==
+"@completely/bash-generator@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@completely/bash-generator/-/bash-generator-0.0.9.tgz#b62596217dcfe9f845fb1efd24941958eb0ed042"
+  integrity sha512-OCKMVOQ2+siBVlr66jSpJrs6ehia8ErP9uE8jXeB2L3vUwre0As1Ar+gbJtcIqaODXLAhpVoJ7CuM/R93HM3AQ==
   dependencies:
-    "@completely/spec" "^0.0.3"
+    "@completely/spec" "^0.0.7"
     handlebars "^4.5.2"
 
-"@completely/spec@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@completely/spec/-/spec-0.0.3.tgz#9daa0a64195aa65224e7a17796f5c545ad3afb1f"
-  integrity sha512-YhooTwjU68z4MgA7ELWZxVdQEqtM+Bx9uC5xxA+qwZl+/8AOcUqG231psHK1b4G/5TxNZzWcWcVwdzgiWI1J8Q==
+"@completely/spec@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@completely/spec/-/spec-0.0.7.tgz#5965c93ed8efa535fea8ce9f27fefa5c14c8c631"
+  integrity sha512-cbHB6iUVJESvIaPSchgZy2XlbzdAemZgPtU7SmYv0tB9tEB2MWBzilbcIXYaZLmOUC1zS3GXMyisEl4CJDVmeg==
   dependencies:
     ajv "^6.10.2"
     json-schema-to-typescript "^7.1.0"
+
+"@completely/zsh-generator@^0.0.4":
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/@completely/zsh-generator/-/zsh-generator-0.0.4.tgz#88c492e4a82bec1cc2fafd6bfa9f2cf36f05a4a3"
+  integrity sha512-Ljr/SssvQ6WgTSeTebbkgO6WP9SsyoVhmJyt7QAAZDVYhC/apAc/XdQIyWLLC0N6UM3ZvEY6wRRQzqE0M1DpDw==
+  dependencies:
+    "@completely/spec" "^0.0.7"
+    handlebars "^4.5.3"
 
 "@oclif/command@^1", "@oclif/command@^1.5.13":
   version "1.5.19"
@@ -382,6 +390,18 @@ handlebars@^4.5.2:
   optionalDependencies:
     uglify-js "^3.1.4"
 
+handlebars@^4.5.3:
+  version "4.7.6"
+  resolved "https://registry.yarnpkg.com/handlebars/-/handlebars-4.7.6.tgz#d4c05c1baf90e9945f77aa68a7a219aa4a7df74e"
+  integrity sha512-1f2BACcBfiwAfStCKZNrUCgqNZkGsAT7UM3kkYtXuLo0KnaVfjKOyf7PRzB6++aK9STyT1Pd2ZCPe3EGOXleXA==
+  dependencies:
+    minimist "^1.2.5"
+    neo-async "^2.6.0"
+    source-map "^0.6.1"
+    wordwrap "^1.0.0"
+  optionalDependencies:
+    uglify-js "^3.1.4"
+
 has-flag@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
@@ -497,9 +517,9 @@ lodash.templatesettings@^4.0.0:
     lodash._reinterpolate "^3.0.0"
 
 lodash@^4.17.11:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 lru-queue@0.1:
   version "0.1.0"
@@ -531,6 +551,11 @@ minimist@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
   integrity sha1-o1AIsg9BOD7sH7kU9M1d95omQoQ=
+
+minimist@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
+  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
 
 minimist@~0.0.1:
   version "0.0.10"
@@ -741,6 +766,11 @@ widest-line@^2.0.1:
   integrity sha512-Ba5m9/Fa4Xt9eb2ELXt77JxVDV8w7qQrH0zS/TWSJdLyAwQjWoOzpzj5lwVftDz6n/EOu3tNACS84v509qwnJA==
   dependencies:
     string-width "^2.1.1"
+
+wordwrap@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/wordwrap/-/wordwrap-1.0.0.tgz#27584810891456a4171c8d0226441ade90cbcaeb"
+  integrity sha1-J1hIEIkUVqQXHI0CJkQa3pDLyus=
 
 wordwrap@~0.0.2:
   version "0.0.3"
